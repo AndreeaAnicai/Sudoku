@@ -1,1 +1,22 @@
 Summarise your findings here (see specification).
+
+Mystery1.dat:
+- is solvable
+- has a runtime of 0.120858 seconds
+
+Mystery2.dat:
+- is not solvable
+- has a runtime of 0.004458 seconds 
+
+Mystery3.dat:
+- is solvable 
+- has a runtime of 0.00497 seconds
+
+
+Based on the above obervations, we can conclude:
+
+- mystery1.dat is the board of "extremely hard" difficulty, as it takes longer for the function to find a solution, compared to mystery3.dat. 
+
+- mystery2.dat is the board which is impossible to solve
+
+- mystery3.dat is the board of "hard" difficulty
