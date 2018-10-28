@@ -152,7 +152,7 @@ bool save_board(const char* filename, char board[9][9]) {
   for (int i=0; i<9; i++) 
     for (int j=0; j<9; j++) 
       if(board[i][j] == '\0') {
-        cout<<"Board or element is empty" << endl;
+        cout<<"Board is empty" << endl;
         return false;
       }
 

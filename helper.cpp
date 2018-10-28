@@ -63,7 +63,7 @@ bool check_position_valid(const char position[2]) {
 /* Function to complete a Sudoku board recursively */
 bool board_solution(char test_board[9][9], int row_index, int col_index) {
 
-  /* Check if function passes through all board cells */
+  /* Check if function reaches end of board */
   if (row_index == 9)
     return true;
 
