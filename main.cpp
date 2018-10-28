@@ -21,10 +21,6 @@ int main() {
 
   cout << "=================== Question 1 ===================" << endl << endl;
 
-  /*Edge cases:
-  - what if array is empty
-  - what if array has space not dot '.' 
-  */
 
   load_board("easy.dat", board);
   cout << "Board is ";
@@ -39,7 +35,7 @@ int main() {
   cout << "complete." << endl << endl;
 
 
-  /* Edge case 1: input filename doesn't exist 
+  /* Edge case 1: input filename doesn't exist program terminates
   load_board("", board);
   if (save_board("easy-copy1.dat", board))
     cout << "Save board to 'easy-copy1.dat' successful." << endl;
@@ -48,7 +44,7 @@ int main() {
   cout << endl;*/
 
 
-  /* Edge case 2: board is smaller than expected 
+  /* Edge case 2: board is smaller than expected; program terminates
   load_board("easy_wrong_dimension.dat", board);
   if (save_board("easy-copy2.dat", board))
     cout << "Save board to 'easy-copy3.dat' successful." << endl;
@@ -70,7 +66,7 @@ int main() {
   display_board(board);
 
 
-  /* Edge case 1: position starts with lower-case 
+  /* Edge case 1: position starts with lower-case; move not valid
   cout << "Putting '1' into a8 is ";
   if (!make_move("a8", '1', board)) 
     cout << "NOT ";
@@ -78,7 +74,7 @@ int main() {
   display_board(board);*/
 
 
-  /* Edge case 2: position is null 
+  /* Edge case 2: position is null; move not valid
   cout << "Putting '1' into _ is ";
   if (!make_move("", '1', board)) 
     cout << "NOT ";
@@ -86,7 +82,7 @@ int main() {
   display_board(board);*/
 
 
-  /* Edge case 3: position is out of bounds  
+  /* Edge case 3: position is out of bounds; move not valid  
   cout << "Putting '1' into K7 is ";
   if (!make_move("K7", '1', board)) 
     cout << "NOT ";
@@ -94,9 +90,16 @@ int main() {
   display_board(board);*/
 
 
-  /* Edge case 4: position is made of letter followed by 2 digits 
-  cout << "Putting '1' into C38 is ";
+  /* Edge case 4: position is made of letter followed by 2 digits; move not valid
+  cout << "Putting '1' into C48 is ";
   if (!make_move("C28", '1', board)) 
+    cout << "NOT ";
+  cout << "a valid move. The board is:" << endl;
+  display_board(board);*/
+
+  /* Edge case 5: digit is not between 1-9; move not valid  
+  cout << "Putting '*' into D7 is ";
+  if (!make_move("K7", '1', board)) 
     cout << "NOT ";
   cout << "a valid move. The board is:" << endl;
   display_board(board);*/
@@ -121,18 +124,14 @@ int main() {
   cout << endl;*/
 
 
-  /* Edge case 2: board is empty 
-  char empty_board[9][9];
+  /* Edge case 2: board is empty; we declare a new board and don't initialise it; nothing will be saved in output file 
+  char empty_board[9][9]; 
 
   if (save_board("easy-copy.dat3", empty_board))
     cout << "Save board to 'easy-copy3.dat' successful." << endl;
   else
     cout << "Save board failed." << endl;
-  cout << endl;*/
-
-  /*
-  - how do we check if file was succesfully written? same size as input array? 
-   */
+  cout << endl; */
 
 
   cout << "=================== Question 4 ===================" << endl << endl;
@@ -154,7 +153,7 @@ int main() {
     cout << "A solution cannot be found." << endl;
   cout << endl;
 
-  /* Edge case 1: input array is empty (not pre-filled positions) 
+  /* Edge case 1: input array is empty (no pre-filled positions) 
   load_board("easy-empty.dat", board);
   if (solve_board(board)) {
     cout << "The 'easy-empty board has a solution:" << endl;
@@ -163,7 +162,7 @@ int main() {
     cout << "A solution cannot be found." << endl;
   cout << endl;*/
 
-  /* Edge case 2: input array is completed 
+  /* Edge case 2: input array is already completed - returns the completed board
   load_board("easy-solution.dat", board);
   if (solve_board(board)) {
     cout << "The 'easy-solution board has a solution:" << endl;
@@ -194,7 +193,7 @@ t1 = clock();
 
 t2 = clock();
 
-float diff = ((float)t2-(float)t1);
+float diff = ((float)t2-(float)t1); /* time difference shows how long it took to compile this section of the code */
 float seconds = diff / CLOCKS_PER_SEC;
 cout<< seconds <<endl;
 cout<< endl;

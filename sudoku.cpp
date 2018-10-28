@@ -96,6 +96,7 @@ bool make_move(const char position[3], char digit, char board[9][9]) {
   row_index = (int) position[0] - 65; /*ASCII code for A is 65; i is 1st index*/
   col_index = (int) position[1] - 49; /*ASCII code for 1 is 49; j is 2nd index*/
 
+
   if ( (check_entry_valid(row_index,col_index,digit,board) ) && (check_position_valid(position) ) ) {
 
     /* Update board */
@@ -129,6 +130,15 @@ bool save_board(const char* filename, char board[9][9]) {
   if(!out_stream)
     return false;
 
+  /* Check board is not empty */
+
+  for (int i=0; i<9; i++) 
+    for (int j=0; j<9; j++) 
+      if(board[i][j] == '\0') {
+        cout<<"Board is empty" << endl;
+        return false;
+      }
+
   /* Write the board to file  */
 
   if(out_stream.is_open())
@@ -146,15 +156,6 @@ bool save_board(const char* filename, char board[9][9]) {
     cout<< "Error opening file" << endl;
     return false;
   }
-
-/* Check board is not empty */
-
-  for (int i=0; i<9; i++) 
-    for (int j=0; j<9; j++) 
-      if(board[i][j] == '\0') {
-        cout<<"Board is empty" << endl;
-        return false;
-      }
 
  out_stream.close();
    

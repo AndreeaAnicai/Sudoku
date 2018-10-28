@@ -10,8 +10,7 @@ using namespace std;
 
 
 /* Function to check if digit is not doubled in the row, column, sub-board */
-bool check_entry_valid(int row_index, int col_index, char digit, char board[9][9]) 
-{
+bool check_entry_valid(int row_index, int col_index, char digit, char board[9][9]) {
   int i,j;
 
   /* Check position is unoccupied */
@@ -46,7 +45,7 @@ bool check_entry_valid(int row_index, int col_index, char digit, char board[9][9
 /* Function to check if position on board is valid */
 bool check_position_valid(const char position[2]) {
 
-   /* Only works for capital letters */
+/* Only works for capital letters */
 
  if(strlen(position) != 2) {
   return false;
@@ -75,7 +74,7 @@ bool board_solution(char test_board[9][9], int row_index, int col_index) {
 
   else {
 
-    /* Array of digits to be put in empty cells */
+    /* Array of digits to try put in empty cells */
     char digits[9] = {'1','2','3','4','5','6','7','8','9'};
 
     for(int i=0; i<9; i++){
@@ -90,7 +89,7 @@ bool board_solution(char test_board[9][9], int row_index, int col_index) {
 
         else {
             
-          /* Initialize the cell when backtracking if the value in the next cell was not valid */
+          /* Initialize the cell if the value in the next cell was not valid */
           test_board[row_index][col_index] = '.';
         }
 
